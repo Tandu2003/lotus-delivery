@@ -1,0 +1,33 @@
+.breadcrumb-wrapper {
+  .breadcrumb {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+
+    .breadcrumb__item {
+      font-size: 1.2rem;
+      white-space: nowrap;
+
+      .breadcrumb-name {
+        color: #828282;
+        display: inline;
+        font-size: 13px;
+        text-align: left;
+      }
+
+      .breadcrumb-separator {
+        color: #ccc;
+        padding: 0 5px;
+      }
+
+      strong {
+        color: #6c757d;
+        display: inline;
+        font-size: 13px;
+        font-weight: 500;
+        text-align: left;
+      }
+    }
+  }
+}

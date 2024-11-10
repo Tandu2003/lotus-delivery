@@ -1,0 +1,299 @@
+/* body */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img,
+iframe {
+  max-width: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+body {
+  font-size: 15px;
+  color: #333333;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #333333;
+  font-weight: 300;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 0.8px;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: #333333;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+img {
+  border: none;
+  max-width: 100%;
+  height: auto;
+  -webkit-user-drag: none;
+}
+
+a {
+  color: #333333;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #80cfce;
+  text-decoration: none;
+}
+
+a:focus {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+
+a,
+button,
+input {
+  transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  -o-transition: all 0.3s ease-in-out 0s;
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -ms-transition: all 0.3s ease-in-out 0s;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+textarea {
+  border: 1px solid #b5b5b5;
+  padding: 8px 15px;
+  font-size: 14px;
+  color: #757575;
+  border-radius: 0;
+}
+
+button,
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+  border-color: #c1bcbc;
+  outline: none;
+}
+
+fieldset legend {
+  display: inline-block;
+  color: inherit;
+  background: none;
+  vertical-align: top;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+}
+
+table tr td {
+  border-top: 1px solid #dddddd;
+}
+
+table tr td,
+table tr th {
+  padding: 10px;
+  text-align: left;
+}
+
+table tr td:first-child,
+table tr th:first-child {
+  padding-left: 0px;
+}
+
+table tr td:last-child,
+table tr th:last-child {
+  padding-right: 0px;
+}
+
+/* 1.5 - Lists */
+ul,
+ol {
+  padding: 0;
+  margin: 0 0 15px;
+  list-style-type: none;
+}
+
+.typeList-style * {
+  max-width: 100% !important;
+}
+
+.typeList-style ul {
+  list-style: initial;
+  padding-left: 20px;
+}
+
+.typeList-style ol {
+  list-style-type: decimal;
+  padding-left: 20px;
+}
+
+.typeList-style ul ul {
+  list-style-type: circle;
+}
+
+.typeList-style ul ul ul {
+  list-style-type: square;
+}
+
+.typeList-style ul li,
+.typeList-style ol li {
+  margin: 5px 0;
+}
+
+/*  Anmaiton css3 */
+@-webkit-keyframes sticky_header_animation {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes sticky_header_animation {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@-webkit-keyframes slideshowFade {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideshowFade {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateIconLoad {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
