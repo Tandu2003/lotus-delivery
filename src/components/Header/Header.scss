@@ -39,6 +39,7 @@ header.header {
           width: 45%;
 
           .header-location-head {
+            position: relative;
             display: flex;
             width: 90%;
             flex-wrap: nowrap;
@@ -65,53 +66,159 @@ header.header {
             }
           }
           .header-location-popup {
-            &.hide {
-              display: none;
+            position: absolute;
+            top: calc(100% + 10px);
+            left: 0;
+            width: 395px;
+            height: min-content;
+            background-color: #fff;
+            border-radius: 6px;
+            box-shadow: 0 16px 24px rgba(0, 0, 0, 0.12);
+            z-index: 10;
+            overflow: hidden;
+
+            .location-dropdown {
+              max-height: 0;
+              overflow: hidden;
+              transition: max-height 0.4s ease-in-out;
+
+              &.show {
+                max-height: 100vh;
+              }
+
+              .dropdown-content {
+                padding: 20px;
+                .content-header {
+                  padding: 0 0 10px;
+                  border-bottom: 1px solid #e7e7e7;
+                  text-align: center;
+
+                  .content-title {
+                    font-size: 18px;
+                    color: #f34b0c;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                    margin: 0;
+                    font-weight: 500;
+                  }
+                }
+                .content-body {
+                  overflow-y: scroll;
+                  max-height: 55vh;
+                  margin-right: -20px;
+                  padding-right: 20px;
+                  padding-top: 20px;
+
+                  &::-webkit-scrollbar {
+                    width: 4px;
+                    height: 3px;
+                  }
+
+                  &::-webkit-scrollbar-thumb {
+                    border-radius: 2px;
+                    background: #e1e3e4;
+                    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+                  }
+
+                  &::-webkit-scrollbar-track {
+                    -webkit-border-radius: 2px;
+                    border-radius: 2px;
+                  }
+
+                  .box-select {
+                    .filter-select {
+                      margin-right: -5px;
+                      margin-left: -5px;
+                      display: -ms-flexbox;
+                      display: flex;
+
+                      .select-item {
+                        flex-basis: 0;
+                        -ms-flex-positive: 1;
+                        flex-grow: 1;
+                        min-width: 0;
+                        max-width: 50%;
+                        padding-left: 5px;
+                        padding-right: 5px;
+                        margin-bottom: 10px;
+
+                        label {
+                          display: block;
+                          font-weight: 500;
+                          font-size: 13px;
+                          margin: 0 0 5px;
+                        }
+                        .field-select {
+                          border: 0;
+                          font-size: 100%;
+                          margin: 0;
+                          outline: 0;
+                          padding: 0;
+                          vertical-align: baseline;
+
+                          select {
+                            padding: 0 25px 0 8px;
+                            cursor: pointer;
+                            outline: none;
+                            text-overflow: ellipsis;
+                            border-radius: 4px;
+                            height: 34px;
+                            line-height: 32px;
+                            border: 1px solid #e7e7e7;
+                            font-size: 13px;
+                            width: 100%;
+                            font-weight: 500;
+                          }
+                        }
+                      }
+                    }
+                  }
+                  .box-address {
+                    border-radius: 5px;
+                    padding: 6px 15px;
+                    background: rgba(0, 0, 0, 0.1);
+
+                    p {
+                      font-weight: 500;
+                      margin: 0;
+                    }
+
+                    .box-address-title,
+                    .box-address-content {
+                      color: #035d6d;
+                      font-size: 13px;
+                      line-height: 20px;
+                    }
+                  }
+                  .box-province {
+                    padding: 10px 0;
+                    .text-province {
+                      color: #000;
+                      font-weight: 500;
+                    }
+                    .list-address {
+                      padding: 10px 0;
+                      .address-item {
+                        position: relative;
+                        border-top: 1px dotted #e7e7e7;
+                        cursor: pointer;
+                        padding: 10px 10px 10px 35px;
+                        transition: background 0.4s ease;
+
+                        img {
+                          position: absolute;
+                          top: 25%;
+                          left: 0;
+                          width: 24px;
+                          height: 24px;
+                          transform: translateY(-25%);
+                        }
+                      }
+                    }
+                  }
+                }
+              }
             }
-            // .location-dropdown {
-            //   .dropdown-content {
-            //     .content-header {
-            //       .content-title {
-            //         // styles for content title
-            //       }
-            //     }
-            //     .content-body {
-            //       .box-select {
-            //         .filter-select {
-            //           .select-item {
-            //             label {
-            //               // styles for labels
-            //             }
-            //             .field-select {
-            //               select {
-            //                 &.filter-province,
-            //                 &.filter-district {
-            //                   // styles for select province and district
-            //                 }
-            //               }
-            //             }
-            //           }
-            //         }
-            //       }
-            //       .box-address {
-            //         .box-address-title {
-            //           // styles for box address title
-            //         }
-            //         .box-address-content {
-            //           // styles for box address content
-            //         }
-            //       }
-            //       .box-province {
-            //         .text-province {
-            //           // styles for text province
-            //         }
-            //         .list-address {
-            //           // styles for list address
-            //         }
-            //       }
-            //     }
-            //   }
-            // }
           }
         }
         .header-center-search {
