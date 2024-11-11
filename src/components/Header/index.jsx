@@ -7,9 +7,8 @@ import btn_search from "../../assets/svg/btn-search.svg";
 import shopping_cart from "../../assets/svg/shopping-cart.svg";
 import account_user from "../../assets/svg/account-user.svg";
 import location_dropdown from "../../assets/svg/location-dropdown.svg";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { render } from "@testing-library/react";
 
 const locations = [
   {
@@ -76,11 +75,16 @@ const locations = [
 ];
 
 const Header = () => {
+  const products = [];
+
+  const resultSearch = products.filter((product) => (product.title || "").includes(inputSearch));
+
   const cartItemCount = 0; // Số lượng sản phẩm trong giỏ hàng
   const [isShowLocation, setIsShowLocation] = useState(false);
   const [location, setLocation] = useState(locations[0].districts[2].address[0].name);
   const [selectedProvince, setSelectedProvince] = useState("");
   const [selectedDistrict, setSelectedDistrict] = useState("");
+  const [inputSearch, setInputSearch] = useState("");
 
   const handleShowLocation = () => {
     setIsShowLocation(!isShowLocation);
@@ -129,6 +133,22 @@ const Header = () => {
         </div>
       );
     });
+  };
+
+  const handleSearchChange = (e) => {
+    setInputSearch(e.target.value);
+  };
+
+  const renderResultSearch = (results) => {
+    return results?.slice(0, 5).map((item, index) => (
+      <div key={index} className="result-item">
+        <div className="result-item-info">
+          <p className="result-item-name">{item.name}</p>
+          <p className="result-item-price">{item.price}₫</p>
+        </div>
+        <img src={item.image} alt={item.name} />
+      </div>
+    ));
   };
 
   return (
@@ -221,12 +241,32 @@ const Header = () => {
                     <img src={btn_search} alt="btn-search" />
                   </button>
                   <input type="hidden" name="type" value="product" />
-                  <input type="text" name="q" placeholder="Nhập từ khóa tìm kiếm" />
+                  <input
+                    type="text"
+                    name="q"
+                    placeholder="Nhập từ khóa tìm kiếm"
+                    onChange={handleSearchChange}
+                  />
                 </form>
                 {/* Start popup search suggest */}
-                <div className="header-search-suggest hide">
-                  <div className="result-content">{/* map list result search */}</div>
-                </div>
+                {resultSearch.length > 0 && (
+                  <div className={`header-search-suggest`}>
+                    <div className="result-content">
+                      <div className="result-list">
+                        {renderResultSearch(resultSearch)}
+                        <Link
+                          to={`/search?type=product&q=filter=(title:product%20contains%20${inputSearch})`}
+                        >
+                          {resultSearch.length > 5 && (
+                            <div className="result-more">
+                              Xem thêm {resultSearch.length - 5} kết quả
+                            </div>
+                          )}
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                )}
                 {/* End popup search suggest */}
               </div>
             </div>

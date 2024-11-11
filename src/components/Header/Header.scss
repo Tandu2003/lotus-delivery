@@ -264,14 +264,41 @@ header.header {
               }
             }
           }
-          // .header-search-suggest {
-          //   &.hide {
-          //     display: none;
-          //   }
-          //   .result-content {
-          //     // styles for result content
-          //   }
-          // }
+          .header-search-suggest {
+            position: absolute;
+            top: calc(100% + 10px);
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 6px;
+            box-shadow: 0 16px 24px rgba(0, 0, 0, 0.12);
+            .result-content {
+              .result-list {
+                padding: 0 20px;
+
+                .result-item {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  padding: 10px 10px;
+                  border-bottom: 1px dotted #dfe0e1;
+                  clear: both;
+
+                  img {
+                    width: 40px;
+                    height: 40px;
+                  }
+                }
+
+                .result-more {
+                  text-align: center;
+                  display: block;
+                  font-size: 14px;
+                  padding: 10px 0;
+                }
+              }
+            }
+          }
         }
       }
       .header-right {
