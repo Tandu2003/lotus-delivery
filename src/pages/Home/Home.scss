@@ -1,2 +1,41 @@
 .home {
+  .container {
+    .home-policy {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid #ebebeb;
+
+      .home-policy-item {
+        padding: 22px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 36px;
+          height: 36px;
+          object-fit: contain;
+          margin-right: 16px;
+        }
+
+        .policy-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          margin-bottom: 0;
+
+          span {
+            color: #6b6b6b;
+          }
+
+          b {
+            display: block;
+          }
+        }
+      }
+    }
+  }
 }
