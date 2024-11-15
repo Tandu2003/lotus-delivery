@@ -1,5 +1,6 @@
 import "./Home.scss";
 import SlideShow from "../../components/SlideShow";
+import { Link } from "react-router-dom";
 
 const slideImages = [
   {
@@ -64,6 +65,33 @@ const Home = () => {
     },
   ];
 
+  const vendors = [
+    {
+      id: 1,
+      image:
+        "https://res.cloudinary.com/dflpparty/image/upload/v1731371084/LotusDelivery/home_vendor_item_image_1_rjsel5.webp",
+      name: "coco-ichibanya",
+    },
+    {
+      id: 2,
+      image:
+        "https://res.cloudinary.com/dflpparty/image/upload/v1731371088/LotusDelivery/home_vendor_item_image_2_zdbela.webp",
+      name: "conservo",
+    },
+    {
+      id: 3,
+      image:
+        "https://res.cloudinary.com/dflpparty/image/upload/v1731371092/LotusDelivery/home_vendor_item_image_3_ukoxig.webp",
+      name: "marukame-udon",
+    },
+    {
+      id: 4,
+      image:
+        "https://res.cloudinary.com/dflpparty/image/upload/v1731371093/LotusDelivery/home_vendor_item_image_5_z2hwo2.webp",
+      name: "yoshinoya",
+    },
+  ];
+
   return (
     <>
       <div className="home">
@@ -79,6 +107,19 @@ const Home = () => {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="home-vendor">
+            <div className="home-vendor-head">
+              <h2>Thương hiệu nổi bật</h2>
+            </div>
+            <div className="home-vendor-body">
+              {vendors.map((vendor, index) => (
+                <Link to={`/pages/${vendor.name}`} key={index} className="home-vendor-item">
+                  <img src={vendor.image} alt={vendor.name} />
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>

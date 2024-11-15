@@ -37,5 +37,36 @@
         }
       }
     }
+
+    .home-vendor {
+      margin-top: 60px;
+      max-width: 1200px;
+      margin: 60px auto 0;
+
+      .home-vendor-head {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+
+        h2 {
+          font-size: 24px;
+          font-weight: bold;
+        }
+      }
+
+      .home-vendor-body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        margin: 30px auto 0;
+
+        img {
+          display: block;
+        }
+      }
+    }
   }
 }
