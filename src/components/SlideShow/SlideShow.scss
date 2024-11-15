@@ -1,0 +1,24 @@
+.swiper-pagination-bullet {
+  background-color: #f4639a;
+  width: 10px;
+  height: 10px;
+  opacity: 0.5;
+
+  &-active {
+    opacity: 1;
+  }
+}
+
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 20px;
+}
+
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 6px;
+}
+
+.swiper-slide {
+  display: flex;
+  height: auto; /* Chiều cao tự động theo nội dung */
+  position: relative;
+}
