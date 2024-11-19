@@ -28,13 +28,15 @@ const Home = () => {
               <h2>Thương hiệu nổi bật</h2>
             </div>
             <div className="home-vendor-body">
-              {products.map((product, index) => (
+              {[
+                ...new Map(products.map((product) => [product?.vendor.name, product])).values(),
+              ].map((uniqueProduct, index) => (
                 <Link
-                  to={`/pages/${product?.vendor.name}`}
+                  to={`/pages/${uniqueProduct?.vendor.name}`}
                   key={index}
                   className="home-vendor-item"
                 >
-                  <img src={product?.vendor.image} alt={product?.vendor.name} />
+                  <img src={uniqueProduct?.vendor.image} alt={uniqueProduct?.vendor.name} />
                 </Link>
               ))}
             </div>
