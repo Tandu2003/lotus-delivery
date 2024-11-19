@@ -20,7 +20,7 @@ const Slideshow = ({ slideImages }) => {
     >
       {slideImages.map((slideImage, index) => (
         <SwiperSlide key={index}>
-          <img src={slideImage.image} alt={slideImage.alt} />
+          <img src={slideImage.imageUrl} alt={slideImage.alt} />
         </SwiperSlide>
       ))}
     </Swiper>
