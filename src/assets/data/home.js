@@ -60,21 +60,6 @@ const policies = [
   },
 ];
 
-const vendors = [
-  {
-    id: 1,
-  },
-  {
-    id: 2,
-  },
-  {
-    id: 3,
-  },
-  {
-    id: 4,
-  },
-];
-
 const products = [
   {
     id: 1,
@@ -138,4 +123,13 @@ const products = [
   },
 ];
 
-export { slideImages, policies, vendors, products };
+const tag_suggestions = [
+  { id: 1, tag: "shokupan" },
+  { id: 2, tag: "sweetbread" },
+  { id: 3, tag: "savourytoast" },
+  { id: 4, tag: "udon" },
+  { id: 5, tag: "aburipot" },
+  { id: 6, tag: "teishoku" },
+];
+
+export { slideImages, policies, products, tag_suggestions };
