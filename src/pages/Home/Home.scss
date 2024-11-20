@@ -98,5 +98,54 @@
         gap: 20px;
       }
     }
+
+    .home-suggest {
+      max-width: 1200px;
+      margin: 60px auto;
+
+      .home-suggest-head {
+        display: block;
+
+        h2 {
+          font-size: 24px;
+          font-weight: bold;
+        }
+
+        ul.home-suggest-head-list {
+          margin-top: 30px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: start;
+          align-items: start;
+
+          li {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 7px 12px;
+            border: 1px solid #d8d8d8;
+            margin-top: 8px;
+            font-size: 13px;
+            font-weight: 400;
+            border-radius: 100px;
+            cursor: pointer;
+            margin-right: 8px;
+
+            &.active {
+              background-color: #e96e34;
+              color: #fff;
+            }
+          }
+        }
+      }
+
+      .home-suggest-body {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+    }
   }
 }

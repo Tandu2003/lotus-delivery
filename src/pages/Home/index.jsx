@@ -3,7 +3,7 @@ import SlideShow from "../../components/SlideShow";
 import { Link } from "react-router-dom";
 import ProductItem from "../../components/Product-item";
 
-import { slideImages, policies, products } from "../../assets/data/home";
+import { slideImages, policies, products, tag_suggestions } from "../../assets/data/home";
 
 const Home = () => {
   return (
@@ -48,6 +48,22 @@ const Home = () => {
               <Link to="/collections/hot-deal">Tất cả</Link>
             </div>
             <div className="home-hot-deal-body">
+              {products.map((product, index) => (
+                <ProductItem key={index} product={product} />
+              ))}
+            </div>
+          </div>
+
+          <div className="home-suggest">
+            <div className="home-suggest-head">
+              <h2>Gợi ý cho bạn</h2>
+              <ul className="home-suggest-head-list">
+                {tag_suggestions.map((tag, index) => (
+                  <li key={index}>#{tag.tag}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="home-suggest-body">
               {products.map((product, index) => (
                 <ProductItem key={index} product={product} />
               ))}
